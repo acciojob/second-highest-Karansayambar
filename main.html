@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 
 <html>
-
 <head>
 	<link rel="stylesheet" href="styles.css">
 </head>
 <body>	
 	<script>
 		function secondHighest(arr) {
-			numbersArr.sort((a, b) => b - a);
-			if(arr.length > 2){
-				return arr.length - 1;
-			}else if(arr.length == 0{
-				return "infinity";
-			}
+			if (arr.length <= 1) {
+        return -Infinity;
+    }
+	const uniqueSortedArray = [...new Set(arr)].sort((a, b) => b - a);
+
+    if (uniqueSortedArray.length === 1) {
+        return -Infinity;
+    }
+    return uniqueSortedArray[1];
 		}
 		function Main() {
 			var n = prompt("Enter the number of elements");
